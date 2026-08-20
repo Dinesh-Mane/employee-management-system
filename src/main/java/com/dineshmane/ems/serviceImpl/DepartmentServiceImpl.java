@@ -43,7 +43,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public List<DepartmentDTO> getAllDepartment() {
+    public List<DepartmentDTO> getAllDepartments() {
         List<Department> departments = departmentRepository.findAll();
 
         return departments.stream()
@@ -52,7 +52,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public void deleteDepartmentByid(Long id) {
+    public void deleteDepartmentById(Long id) {
         if(!departmentRepository.existsById(id)) throw new ResourceNotFoundException("Department with given id is not present");
         departmentRepository.deleteById(id);
     }

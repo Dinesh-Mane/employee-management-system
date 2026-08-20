@@ -39,12 +39,12 @@ public class DepartmentController {
 
     @GetMapping
     public ResponseEntity<List<DepartmentDTO>> addDepartment(){
-        return ResponseEntity.status(HttpStatus.OK).body(departmentService.getAllDepartment());
+        return ResponseEntity.status(HttpStatus.OK).body(departmentService.getAllDepartments());
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteDepartment(@PathVariable("id") Long id){
-        departmentService.deleteDepartmentByid(id);
+        departmentService.deleteDepartmentById(id);
         return ResponseEntity.status(HttpStatus.OK).body("Department Deleted!");
     }
 }
